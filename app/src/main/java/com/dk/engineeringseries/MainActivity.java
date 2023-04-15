@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.dk.engineeringseries.Activities.QuestionActivity;
 import com.dk.engineeringseries.Activities.SetsActivity;
 import com.dk.engineeringseries.databinding.ActivityMainBinding;
 
@@ -32,6 +31,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
 
+            }
+        });
+
+        binding.textView4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent in = new Intent(MainActivity.this, CadastroActivity.class);
+                startActivity(in);
+                finish();
             }
         });
 

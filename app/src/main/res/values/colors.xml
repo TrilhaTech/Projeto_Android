@@ -10,7 +10,13 @@
     <color name="green">#6a5be2</color>
     <color name="category">#e8e4fa</color>
     <color name="click">#ff8fa3</color>
+    <color name="select">#817e7e</color>
     <color name="fundoBotao">#8DBCF5</color>
     <color name="fundoAzul">#1E569A</color>
-    <color name="select">#817e7e</color>
+    <color name="fundoAzulClaro">#1368CE</color>
+    <color name="fundoRoxo">#7E1C8D</color>
+    <color name="fundoRoxoClaro">#9E20B2</color>
+
+
+
 </resources>
