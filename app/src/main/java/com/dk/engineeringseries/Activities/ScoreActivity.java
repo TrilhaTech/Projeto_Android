@@ -8,6 +8,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.dk.engineeringseries.CadastroActivity;
+import com.dk.engineeringseries.DevActivity;
+import com.dk.engineeringseries.MainActivity;
 import com.dk.engineeringseries.R;
 import com.dk.engineeringseries.databinding.ActivityScoreBinding;
 
@@ -26,6 +29,16 @@ public class ScoreActivity extends AppCompatActivity {
         int correctAnsw = getIntent().getIntExtra("score", 0);
 
         int wrong = totalScore-correctAnsw;
+
+        binding.results.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent in = new Intent(ScoreActivity.this, DevActivity.class);
+                startActivity(in);
+                finish();
+            }
+        });
 
         binding.retry.setOnClickListener(new View.OnClickListener() {
             @Override

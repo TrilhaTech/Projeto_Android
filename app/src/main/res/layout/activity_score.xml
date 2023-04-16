@@ -96,7 +96,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/retry2"
+                android:id="@+id/results"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/btn_share"
