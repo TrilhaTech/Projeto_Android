@@ -29,7 +29,7 @@ public class QuestionActivity extends AppCompatActivity {
     ActivityQuestionBinding binding;
     private List<QuestionModel> list = new ArrayList<>();
 
-    public int contDev, contRedes, contGeren, contTestes, contDados;
+    public int contDev = 1, contRedes = 0, contGeren = 0, contTestes = 0, contDados = 0;
 
     private String[] dev = new String[]{"A - Desenvolvimento",
             "B - Desenvolvimento",
@@ -204,7 +204,7 @@ public class QuestionActivity extends AppCompatActivity {
         for (String contar:dev) {
             if (contar.equals(selectedOption.getText())) {
                 System.out.println("-----------DEV-------------");
-                cont.somarDev();
+                contDev++;
             }
         }
         for (String contar:redes) {

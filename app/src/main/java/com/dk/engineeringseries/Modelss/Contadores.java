@@ -1,7 +1,7 @@
 package com.dk.engineeringseries.Modelss;
 
 public class Contadores {
-    public int contDev, contRedes = 0, contGeren = 0, contTestes = 0, contDados = 0;
+    public int contDev, contRedes, contGeren, contTestes, contDados;
 
     public int getContDev() {
         return contDev;
@@ -51,7 +51,7 @@ public class Contadores {
         this.contDados = contDados;
     }
 
-    public void somarDev(){
-        this.contDev = this.contDev + 1;
+    public int somarDev(){
+        return this.contDev++;
     }
 }
