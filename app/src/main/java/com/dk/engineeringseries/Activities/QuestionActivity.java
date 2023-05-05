@@ -29,7 +29,7 @@ public class QuestionActivity extends AppCompatActivity {
     ActivityQuestionBinding binding;
     private List<QuestionModel> list = new ArrayList<>();
 
-    public int contDev = 1, contRedes = 0, contGeren = 0, contTestes = 0, contDados = 0;
+    public int contDev = 1, contRedes = 1, contGeren = 1, contTestes = 1, contDados = 1;
 
     private String[] dev = new String[]{"A - Desenvolvimento",
             "B - Desenvolvimento",
@@ -99,10 +99,29 @@ public class QuestionActivity extends AppCompatActivity {
                 enableOption(true);
                 position ++;
                 if (position==list.size()){
-
                     Intent scoreInent = new Intent(QuestionActivity.this,ScoreActivity.class);
-                    scoreInent.putExtra("score",score);
                     scoreInent.putExtra("total",list.size());
+
+                    if(maiorPontuacao() == 1){
+                        scoreInent.putExtra("dev", "dev");
+
+                    }
+                    else if(maiorPontuacao() == 2){
+                        scoreInent.putExtra("redes", "redes");
+
+                    }
+                    else if(maiorPontuacao() == 3){
+                        scoreInent.putExtra("geren", "geren");
+
+                    }
+                    else if(maiorPontuacao() == 4){
+                        scoreInent.putExtra("testes", "testes");
+
+                    }
+                    else if(maiorPontuacao() == 5){
+                        scoreInent.putExtra("dados", "dados");
+
+                    }
                     startActivity(scoreInent);
                     finish();
                     return;
@@ -201,49 +220,76 @@ public class QuestionActivity extends AppCompatActivity {
 
         selectedOption.setBackgroundResource(R.drawable.right_answ);
 
-        for (String contar:dev) {
-            if (contar.equals(selectedOption.getText())) {
-                System.out.println("-----------DEV-------------");
-                contDev++;
+        for (String contar1 : dev) {
+            for (String contar2 : redes) {
+                for (String contar3 : geren) {
+                    for (String contar4 : testes) {
+                        for (String contar5 : dados) {
+                            if (contar1.equals(selectedOption.getText())) {
+//                                System.out.println("-----------DEV-------------");
+                                contDev++;
+                            } else if (contar2.equals(selectedOption.getText())) {
+//                                System.out.println("-----------REDES-------------");
+                                contRedes++;
+                            } else if (contar3.equals(selectedOption.getText())) {
+//                                System.out.println("-----------GERENCIAMENTO DE PROJETOS-------------");
+                                contGeren++;
+                            } else if (contar4.equals(selectedOption.getText())) {
+//                                System.out.println("-----------TESTES-------------");
+                                contTestes++;
+                            } else if (contar5.equals(selectedOption.getText())) {
+//                                System.out.println("-----------ANÁLISE DE DADOS-------------");
+                                contDados++;
+                            }
+
+                        }
+
+                    }
+
+                }
             }
         }
-        for (String contar:redes) {
-            if(contar.equals(selectedOption.getText())){
-                System.out.println("-----------REDES-------------");
-                //contRedes++;
-            }
+
+       System.out.println("\nDEV = " + contDev+"\n"
+                +"REDES = " + contRedes+"\n"
+                +"GEREN = " + contGeren+"\n"
+                +"TESTES = " + contTestes+"\n"
+                +"DADOS = " + contDados);
+
+        if(maiorPontuacao() == 1){
+            System.out.println("\nDev é o maior");
+        }
+        else if(maiorPontuacao() == 2){
+            System.out.println("\nRedes é o maior");
+        }
+        else if(maiorPontuacao() == 3){
+            System.out.println("\nGeren é o maior");
+        }
+        else if(maiorPontuacao() == 4){
+            System.out.println("\nTestes é o maior");
+        }
+        else if(maiorPontuacao() == 5){
+            System.out.println("\nDados é o maior");
         }
 
-        for (String contar:geren) {
-            if(contar.equals(selectedOption.getText())){
-                System.out.println("-----------GERENCIAMENTO DE PROJETOS-------------");
-              //  contGeren++;
-            }
+    }
+    public int maiorPontuacao(){
+        int maior = contDev;
+        maior = Math.max(maior, contRedes);
+        maior = Math.max(maior, contGeren);
+        maior = Math.max(maior, contTestes);
+        maior = Math.max(maior, contDados);
+
+        if(maior == contRedes){
+            return 2;
+        } else if(maior == contGeren){
+            return 3;
+        }else if(maior == contTestes){
+            return 4;
+        }else if(maior == contDados){
+            return 5;
         }
-
-        for (String contar:testes) {
-            if(contar.equals(selectedOption.getText())){
-                System.out.println("-----------TESTES-------------");
-               // contTestes++;
-            }
-        }
-
-        for (String contar:dados) {
-            if(contar.equals(selectedOption.getText())){
-                System.out.println("-----------ANÁLISE DE DADOS-------------");
-                //contDados++;
-            }
-        }
-        System.out.println("\nDEV = " + cont.getContDev());
-
-//        System.out.println("\nDEV = " + contDev+"\n"
-//                +"REDES = " + contRedes+"\n"
-//                +"GEREN = " + contGeren+"\n"
-//                +"TESTES = " + contTestes+"\n"
-//                +"DADOS = " + contDados);
-
-        //int f = Math.max(Math.max(Math.max(contDev,contRedes),Math.max(contGeren,contTestes)));
-
+        return 1;
     }
     private void enableOption(boolean enable) {
 
@@ -264,18 +310,18 @@ public class QuestionActivity extends AppCompatActivity {
     public void onBackPressed() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(QuestionActivity.this);
-        builder.setMessage("Are you sure want to ext?");
+        builder.setMessage("Você quer sair?");
 
         builder.setCancelable(false);
 
-        builder.setPositiveButton("Yes", (DialogInterface.OnClickListener) (dialog, which) -> {
+        builder.setPositiveButton("Sim", (DialogInterface.OnClickListener) (dialog, which) -> {
 
             Intent intent = new Intent(QuestionActivity.this, SetsActivity.class);
             startActivity(intent);
             finish();
         });
 
-        builder.setNegativeButton("No", (DialogInterface.OnClickListener) (dialog, which) -> {
+        builder.setNegativeButton("Não", (DialogInterface.OnClickListener) (dialog, which) -> {
             dialog.cancel();
         });
 

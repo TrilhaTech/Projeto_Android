@@ -8,14 +8,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.dk.engineeringseries.CadastroActivity;
-import com.dk.engineeringseries.DevActivity;
-import com.dk.engineeringseries.MainActivity;
-import com.dk.engineeringseries.R;
+import com.dk.engineeringseries.ResultadoActivity;
 import com.dk.engineeringseries.databinding.ActivityScoreBinding;
 
 public class ScoreActivity extends AppCompatActivity {
-
     ActivityScoreBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,13 +24,33 @@ public class ScoreActivity extends AppCompatActivity {
         int totalScore = getIntent().getIntExtra("total", 0);
         int correctAnsw = getIntent().getIntExtra("score", 0);
 
+
         int wrong = totalScore-correctAnsw;
 
         binding.results.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                Intent in = new Intent(ScoreActivity.this, DevActivity.class);
+                Intent in = new Intent(ScoreActivity.this, ResultadoActivity.class);
+                if(getIntent().hasExtra("dev")){
+                    System.out.println("O maior é dev");
+                    in.putExtra("dev", "dev");
+                }
+                else if(getIntent().hasExtra("redes")){
+                    System.out.println("O maior é redes");
+                    in.putExtra("redes", "redes");
+                }
+                else if(getIntent().hasExtra("geren")){
+                    System.out.println("O maior é geren");
+                    in.putExtra("geren", "geren");
+                }
+                else if(getIntent().hasExtra("testes")){
+                    System.out.println("O maior é testes");
+                    in.putExtra("testes", "testes");
+                }
+                else if(getIntent().hasExtra("dados")){
+                    System.out.println("O maior é dados");
+                    in.putExtra("dados", "dados");
+                }
                 startActivity(in);
                 finish();
             }

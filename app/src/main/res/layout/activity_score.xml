@@ -59,7 +59,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@mipmap/ic_launcher" />
+                app:srcCompat="@drawable/logo" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/quit"
@@ -97,8 +97,8 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/results"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
+                android:layout_width="112dp"
+                android:layout_height="50dp"
                 android:background="@drawable/btn_share"
                 android:drawablePadding="10dp"
                 android:padding="10dp"

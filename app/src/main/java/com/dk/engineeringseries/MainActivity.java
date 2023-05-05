@@ -1,6 +1,7 @@
 package com.dk.engineeringseries;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.helper.widget.Carousel;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -18,7 +19,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        //setContentView(binding.getRoot());
+        setContentView(R.layout.teste);
+        setupCarousel();
 
         getSupportActionBar().hide();
 
@@ -45,20 +48,40 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private void setupCarousel() {
+        Carousel carousel = (Carousel) findViewById(R.id.carousel);
+        carousel.setAdapter(new Carousel.Adapter() {
+            @Override
+            public int count() {
+                return 2;
+            }
+
+            @Override
+            public void populate(View view, int index) {
+
+            }
+
+            @Override
+            public void onNewItem(int index) {
+
+            }
+        });
+    }
+
     @Override
     public void onBackPressed() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-        builder.setMessage("Are you sure want to ext?");
+        builder.setMessage("Você quer sair?");
 
         builder.setCancelable(false);
 
-        builder.setPositiveButton("Yes", (DialogInterface.OnClickListener) (dialog, which) -> {
+        builder.setPositiveButton("Sim", (DialogInterface.OnClickListener) (dialog, which) -> {
 
             finish();
         });
 
-        builder.setNegativeButton("No", (DialogInterface.OnClickListener) (dialog, which) -> {
+        builder.setNegativeButton("Não", (DialogInterface.OnClickListener) (dialog, which) -> {
             dialog.cancel();
         });
 
