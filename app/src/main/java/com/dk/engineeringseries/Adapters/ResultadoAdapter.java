@@ -1,5 +1,6 @@
 package com.dk.engineeringseries.Adapters;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.view.LayoutInflater;
@@ -17,10 +18,12 @@ import java.util.List;
 
 public class ResultadoAdapter extends RecyclerView.Adapter<ResultadoHolder>{
 
+    Context context;
     private List<Resultado> result;
 
-    public ResultadoAdapter(List<Resultado> a) {
+    public ResultadoAdapter(List<Resultado> a, Context c) {
         this.result = a;
+        context = c;
     }
 
 
@@ -56,17 +59,20 @@ public class ResultadoAdapter extends RecyclerView.Adapter<ResultadoHolder>{
         holder.getTxtDescTrilha1().setText(resultado.getDescTrilha1());
         holder.getTxtDescTrilha2().setText(resultado.getDescTrilha2());
         holder.getTxtDescTrilha3().setText(resultado.getDescTrilha3());
+        holder.getBtnTrilha1().setOnClickListener(view -> trilhaDev1(position));
 
         String resul = resultado.getResultado();
 
         if(resul.equals("Desenvolvedor")){
             System.out.println("Entrou no if");
-            holder.getBtnTrilha1().setOnClickListener(view -> Toast.makeText( view.getContext(), "" +
-                    resultado.getResultado(), Toast.LENGTH_SHORT).show());
         }
 
-
     }
+
+    public void trilhaDev1(int position) {
+        Uri uri = Uri.parse("https://www.youtube.com/");
+        Intent i = new Intent(Intent.ACTION_VIEW, uri);
+        context.startActivity(i);    }
 
     @Override
     public int getItemCount() {

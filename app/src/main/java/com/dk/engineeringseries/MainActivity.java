@@ -19,9 +19,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
-        //setContentView(binding.getRoot());
-        setContentView(R.layout.teste);
-        setupCarousel();
+        setContentView(binding.getRoot());
+        //setContentView(R.layout.teste);
+        //setupCarousel();
 
         getSupportActionBar().hide();
 

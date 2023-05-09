@@ -42,7 +42,7 @@ public class ResultadoActivity extends AppCompatActivity {
     private void listaDev() {
         recyclerResult = (RecyclerView)findViewById(R.id.recyclerResultado);
         recyclerResult.setLayoutManager(new LinearLayoutManager(this));
-        resultadoAdapter = new ResultadoAdapter(ResultadoDataset.getlista1());
+        resultadoAdapter = new ResultadoAdapter(ResultadoDataset.getlista1(),this);
         recyclerResult.setAdapter(resultadoAdapter);
         recyclerResult.addItemDecoration(new DividerItemDecoration(this,
                 DividerItemDecoration.VERTICAL));
@@ -50,7 +50,7 @@ public class ResultadoActivity extends AppCompatActivity {
     private void listaRedes() {
         recyclerResult = (RecyclerView)findViewById(R.id.recyclerResultado);
         recyclerResult.setLayoutManager(new LinearLayoutManager(this));
-        resultadoAdapter = new ResultadoAdapter(ResultadoDataset.getlista2());
+        resultadoAdapter = new ResultadoAdapter(ResultadoDataset.getlista2(),this);
         recyclerResult.setAdapter(resultadoAdapter);
         recyclerResult.addItemDecoration(new DividerItemDecoration(this,
                 DividerItemDecoration.VERTICAL));
@@ -58,7 +58,7 @@ public class ResultadoActivity extends AppCompatActivity {
     private void listaGeren() {
         recyclerResult = (RecyclerView)findViewById(R.id.recyclerResultado);
         recyclerResult.setLayoutManager(new LinearLayoutManager(this));
-        resultadoAdapter = new ResultadoAdapter(ResultadoDataset.getlista3());
+        resultadoAdapter = new ResultadoAdapter(ResultadoDataset.getlista3(),this);
         recyclerResult.setAdapter(resultadoAdapter);
         recyclerResult.addItemDecoration(new DividerItemDecoration(this,
                 DividerItemDecoration.VERTICAL));
@@ -66,7 +66,7 @@ public class ResultadoActivity extends AppCompatActivity {
     private void listaTestes() {
         recyclerResult = (RecyclerView)findViewById(R.id.recyclerResultado);
         recyclerResult.setLayoutManager(new LinearLayoutManager(this));
-        resultadoAdapter = new ResultadoAdapter(ResultadoDataset.getlista4());
+        resultadoAdapter = new ResultadoAdapter(ResultadoDataset.getlista4(),this);
         recyclerResult.setAdapter(resultadoAdapter);
         recyclerResult.addItemDecoration(new DividerItemDecoration(this,
                 DividerItemDecoration.VERTICAL));
@@ -74,7 +74,7 @@ public class ResultadoActivity extends AppCompatActivity {
     private void listaDados() {
         recyclerResult = (RecyclerView)findViewById(R.id.recyclerResultado);
         recyclerResult.setLayoutManager(new LinearLayoutManager(this));
-        resultadoAdapter = new ResultadoAdapter(ResultadoDataset.getlista5());
+        resultadoAdapter = new ResultadoAdapter(ResultadoDataset.getlista5(),this);
         recyclerResult.setAdapter(resultadoAdapter);
         recyclerResult.addItemDecoration(new DividerItemDecoration(this,
                 DividerItemDecoration.VERTICAL));
