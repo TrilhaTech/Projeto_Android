@@ -18,11 +18,14 @@ public class Resultado {
     public String trilha3;
     public String descTrilha3;
 
+    public int imgresult;
+
+
 
     public Resultado() {
     }
 
-    public Resultado(String resultado, String area1, String descArea1, String area2, String descArea2, String area3, String descArea3, int imgTrilha1, String trilha1, String descTrilha1, int imgTrilha2, String trilha2, String descTrilha2, int imgTrilha3, String trilha3, String descTrilha3) {
+    public Resultado(String resultado, String area1, String descArea1, String area2, String descArea2, String area3, String descArea3, int imgTrilha1, String trilha1, String descTrilha1, int imgTrilha2, String trilha2, String descTrilha2, int imgTrilha3, String trilha3, String descTrilha3, int imgresult) {
         this.resultado = resultado;
         this.area1 = area1;
         this.descArea1 = descArea1;
@@ -39,6 +42,8 @@ public class Resultado {
         this.imgTrilha3 = imgTrilha3;
         this.trilha3 = trilha3;
         this.descTrilha3 = descTrilha3;
+        this.imgresult = imgresult;
+
     }
 
     public String getResultado() {
@@ -167,5 +172,13 @@ public class Resultado {
 
     public void setDescTrilha3(String descTrilha3) {
         this.descTrilha3 = descTrilha3;
+    }
+
+    public int getImgresult() {
+        return imgresult;
+    }
+
+    public void setImgresult(int imgresult) {
+        this.imgresult = imgresult;
     }
 }

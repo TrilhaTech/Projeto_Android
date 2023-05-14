@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/subEng1"
+            android:id="@+id/btnCadastrar"
             android:layout_width="163dp"
             android:layout_height="63dp"
             android:layout_marginStart="30dp"
@@ -32,7 +32,7 @@
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName6" />
+            app:layout_constraintTop_toBottomOf="@+id/txtConfirmarc" />
 
         <TextView
             android:id="@+id/textView5"
@@ -49,7 +49,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName2"
+            android:id="@+id/txtUsuarioc"
             android:layout_width="260dp"
             android:layout_height="47dp"
             android:layout_marginStart="35dp"
@@ -63,10 +63,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.476"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5" />
+            app:layout_constraintTop_toBottomOf="@+id/txtNomec" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName3"
+            android:id="@+id/txtEmailc"
             android:layout_width="260dp"
             android:layout_height="47dp"
             android:layout_marginStart="35dp"
@@ -81,10 +81,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.476"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+            app:layout_constraintTop_toBottomOf="@+id/txtUsuarioc" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName4"
+            android:id="@+id/txtSenhac"
             android:layout_width="260dp"
             android:layout_height="47dp"
             android:layout_marginStart="35dp"
@@ -99,10 +99,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.476"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
+            app:layout_constraintTop_toBottomOf="@+id/txtEmailc" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName5"
+            android:id="@+id/txtNomec"
             android:layout_width="260dp"
             android:layout_height="47dp"
             android:layout_marginStart="35dp"
@@ -120,7 +120,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName6"
+            android:id="@+id/txtConfirmarc"
             android:layout_width="260dp"
             android:layout_height="47dp"
             android:layout_marginStart="35dp"
@@ -135,7 +135,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.476"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4" />
+            app:layout_constraintTop_toBottomOf="@+id/txtSenhac" />
 
         <TextView
             android:id="@+id/textView6"
@@ -145,12 +145,12 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="2dp"
             android:text="Já tem uma conta?"
-            app:layout_constraintEnd_toStartOf="@+id/textView4"
+            app:layout_constraintEnd_toStartOf="@+id/txtCadastro"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/subEng1" />
+            app:layout_constraintTop_toBottomOf="@+id/btnCadastrar" />
 
         <TextView
-            android:id="@+id/textView7"
+            android:id="@+id/txtLogin"
             android:layout_width="78dp"
             android:layout_height="22dp"
             android:layout_marginStart="4dp"
@@ -160,7 +160,7 @@
             android:textColor="@color/fundoAzul"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView6"
-            app:layout_constraintTop_toBottomOf="@+id/subEng1" />
+            app:layout_constraintTop_toBottomOf="@+id/btnCadastrar" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

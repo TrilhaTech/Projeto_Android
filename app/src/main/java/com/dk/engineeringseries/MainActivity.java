@@ -1,20 +1,35 @@
 package com.dk.engineeringseries;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.helper.widget.Carousel;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 
 import com.dk.engineeringseries.Activities.SetsActivity;
 import com.dk.engineeringseries.databinding.ActivityMainBinding;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
-
+    private EditText txtEmail, txtSenha;
+    private  View btnEntrar;
     ActivityMainBinding binding;
+    String[] mensagens = {"Preencha todos os campos!" , "Login realizado com sucesso!"};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,20 +39,29 @@ public class MainActivity extends AppCompatActivity {
         //setupCarousel();
 
         getSupportActionBar().hide();
+        IniciarComponentes();
 
 
-        binding.subEng.setOnClickListener(new View.OnClickListener() {
+        binding.btnEntrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(MainActivity.this, SetsActivity.class);
-                startActivity(intent);
-                finish();
+                String email = txtEmail.getText().toString();
+                String senha = txtSenha.getText().toString();
+
+                if(email.isEmpty() || senha.isEmpty()){
+                    Snackbar snackbar = Snackbar.make(view, mensagens[0], Snackbar.LENGTH_SHORT);
+                    snackbar.setBackgroundTint(Color.RED);
+                    snackbar.setTextColor(Color.BLACK);
+                    snackbar.show();
+                }else{
+                    AutenticarUsuario(view);
+                }
 
             }
         });
 
-        binding.textView4.setOnClickListener(new View.OnClickListener() {
+        binding.txtCadastro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent in = new Intent(MainActivity.this, CadastroActivity.class);
@@ -45,6 +69,53 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+    }
+
+    private void AutenticarUsuario(View v) {
+        String email = txtEmail.getText().toString();
+        String senha = txtSenha.getText().toString();
+        FirebaseAuth.getInstance().signInWithEmailAndPassword(email, senha).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()){
+                    Intent intent = new Intent(MainActivity.this, SetsActivity.class);
+                    startActivity(intent);
+                    finish();
+                }else{
+                    String erro;
+                    try {
+                        throw task.getException();
+
+                    }catch (Exception e){
+                        erro = "Usuário não cadastrado!";
+                        txtSenha.setText("");
+                    }
+                    Snackbar snackbar = Snackbar.make(v, erro, Snackbar.LENGTH_SHORT);
+                    snackbar.setBackgroundTint(Color.RED);
+                    snackbar.setTextColor(Color.BLACK);
+                    snackbar.show();
+                }
+            }
+        });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        //USUARIO PERMANECE LOGADO AO FECHAR O APP
+//        FirebaseUser usuarioAtual = FirebaseAuth.getInstance().getCurrentUser();
+//
+//        if(usuarioAtual != null){
+//            Intent intent = new Intent(MainActivity.this, SetsActivity.class);
+//            startActivity(intent);
+//            finish();
+//        }
+    }
+
+    private void IniciarComponentes() {
+        txtEmail = findViewById(R.id.txtemailL);
+        txtSenha = findViewById(R.id.txtSenhaL);
 
     }
 

@@ -27,10 +27,11 @@ public class ResultadoHolder extends RecyclerView.ViewHolder {
     private ImageView imgTrilha3;
     private TextView txtTrilha3;
     private TextView txtDescTrilha3;
-
     private Button btnTrilha1;
     private Button btnTrilha2;
     private Button btnTrilha3;
+
+    private ImageView imgResult;
 
 
 
@@ -55,7 +56,7 @@ public class ResultadoHolder extends RecyclerView.ViewHolder {
         btnTrilha1 = (Button) itemView.findViewById(R.id.btnTrilha1);
         btnTrilha2 = (Button) itemView.findViewById(R.id.btnTrilha2);
         btnTrilha3 = (Button) itemView.findViewById(R.id.btnTrilha3);
-
+        imgResult = (ImageView) itemView.findViewById(R.id.imgResult);
     }
 
     public TextView getTxtResult() {
@@ -192,5 +193,29 @@ public class ResultadoHolder extends RecyclerView.ViewHolder {
 
     public void setBtnTrilha1(Button btnTrilha1) {
         this.btnTrilha1 = btnTrilha1;
+    }
+
+    public Button getBtnTrilha2() {
+        return btnTrilha2;
+    }
+
+    public void setBtnTrilha2(Button btnTrilha2) {
+        this.btnTrilha2 = btnTrilha2;
+    }
+
+    public Button getBtnTrilha3() {
+        return btnTrilha3;
+    }
+
+    public void setBtnTrilha3(Button btnTrilha3) {
+        this.btnTrilha3 = btnTrilha3;
+    }
+
+    public ImageView getImgResult() {
+        return imgResult;
+    }
+
+    public void setImgResult(ImageView imgResult) {
+        this.imgResult = imgResult;
     }
 }

@@ -73,15 +73,15 @@ public class ScoreActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(ScoreActivity.this);
-                builder.setMessage("Are you sure want to ext?");
+                builder.setMessage("Você deseja sair?");
 
                 builder.setCancelable(false);
 
-                builder.setPositiveButton("Yes", (DialogInterface.OnClickListener) (dialog, which) -> {
+                builder.setPositiveButton("Sim", (DialogInterface.OnClickListener) (dialog, which) -> {
                     finish();
                 });
 
-                builder.setNegativeButton("No", (DialogInterface.OnClickListener) (dialog, which) -> {
+                builder.setNegativeButton("Não", (DialogInterface.OnClickListener) (dialog, which) -> {
                     dialog.cancel();
                 });
 

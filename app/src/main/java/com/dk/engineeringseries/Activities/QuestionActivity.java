@@ -75,7 +75,7 @@ public class QuestionActivity extends AppCompatActivity {
         String set = getIntent().getStringExtra("set");
 
         if (set.equals("Começar")){
-            set2074();
+            questoes();
         }
 
         for (int i = 0; i < 5; i++) {
@@ -134,18 +134,47 @@ public class QuestionActivity extends AppCompatActivity {
 
     }
 
-    private void set2074() {
+    private void questoes() {
 
-        list.add(new QuestionModel("1.Questão 1", "A - REDES",
-                "B - Desenvolvimento", "C - Análise de dados", "D - Testes", "E - GERENCIAMENTO DE PROJETOS", "B. "));
-        list.add(new QuestionModel("2.Questão 2", "A - GERENCIAMENTO DE PROJETOS", "B - Testes",
-                "C - Análise de dados", "D - REDES","E - Desenvolvimento",  ""));
-        list.add(new QuestionModel("3.Questão 3", "A - REDES", "B - Desenvolvimento", "C - Testes",
-                "D - GERENCIAMENTO DE PROJETOS","E - Análise de dados",  "A. "));
-        list.add(new QuestionModel("4.Questão 4", "A - Análise de dados", "B - Desenvolvimento",
-                "C - Testes", "D - GERENCIAMENTO DE PROJETOS","E - REDES",  ""));
-        list.add(new QuestionModel("5.Questão 5", "A - Testes", "B - GERENCIAMENTO DE PROJETOS",
-                "C - REDES", "D - Desenvolvimento","E - Análise de dados",  "B. "));
+        list.add(new QuestionModel("1.Questão 1",
+                "A - REDES",
+                "B - Desenvolvimento",
+                "C - Análise de dados",
+                "D - Testes",
+                "E - GERENCIAMENTO DE PROJETOS",
+                ""));
+
+//        list.add(new QuestionModel("2.Questão 2",
+//                "A - GERENCIAMENTO DE PROJETOS",
+//                "B - Testes",
+//                "C - Análise de dados",
+//                "D - REDES",
+//                "E - Desenvolvimento",
+//                ""));
+//
+//        list.add(new QuestionModel("3.Questão 3",
+//                "A - REDES",
+//                "B - Desenvolvimento",
+//                "C - Testes",
+//                "D - GERENCIAMENTO DE PROJETOS",
+//                "E - Análise de dados",
+//                ""));
+//
+//        list.add(new QuestionModel("4.Questão 4",
+//                "A - Análise de dados",
+//                "B - Desenvolvimento",
+//                "C - Testes",
+//                "D - GERENCIAMENTO DE PROJETOS",
+//                "E - REDES",
+//                ""));
+//
+//        list.add(new QuestionModel("5.Questão 5",
+//                "A - Testes",
+//                "B - GERENCIAMENTO DE PROJETOS",
+//                "C - REDES",
+//                "D - Desenvolvimento",
+//                "E - Análise de dados",
+//                ""));
     }
 
     private void playAnimation(View view, int value, final String data) {

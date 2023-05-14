@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "45649448928",
+    "project_id": "trilhatech-d666d",
+    "storage_bucket": "trilhatech-d666d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:45649448928:android:fef3ef87fd4d6dc58fe585",
+        "android_client_info": {
+          "package_name": "com.dk.engineeringseries"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "45649448928-801avcnjv1735hn6q8v80fkckuer3srk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxK4_1izn-6POoi9v3KPvSPf_0d5vJhNI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "45649448928-801avcnjv1735hn6q8v80fkckuer3srk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

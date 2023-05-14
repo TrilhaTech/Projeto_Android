@@ -16,6 +16,9 @@
     <color name="fundoAzulClaro">#1368CE</color>
     <color name="fundoRoxo">#7E1C8D</color>
     <color name="fundoRoxoClaro">#9E20B2</color>
+    <color name="erro">#FB3232</color>
+    <color name="sucesso">#5BF439</color>
+
 
 
 
