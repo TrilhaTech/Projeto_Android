@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
     private  View btnEntrar;
     ActivityMainBinding binding;
     String[] mensagens = {"Preencha todos os campos!" , "Login realizado com sucesso!"};
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
                 if(email.isEmpty() || senha.isEmpty()){
                     Snackbar snackbar = Snackbar.make(view, mensagens[0], Snackbar.LENGTH_SHORT);
                     snackbar.setBackgroundTint(Color.RED);
-                    snackbar.setTextColor(Color.BLACK);
+                    snackbar.setTextColor(Color.WHITE);
                     snackbar.show();
                 }else{
                     AutenticarUsuario(view);
@@ -93,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                     Snackbar snackbar = Snackbar.make(v, erro, Snackbar.LENGTH_SHORT);
                     snackbar.setBackgroundTint(Color.RED);
-                    snackbar.setTextColor(Color.BLACK);
+                    snackbar.setTextColor(Color.WHITE);
                     snackbar.show();
                 }
             }

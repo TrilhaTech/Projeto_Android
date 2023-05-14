@@ -59,13 +59,13 @@ public class CadastroActivity extends AppCompatActivity {
                 if(nome.isEmpty() || usuario.isEmpty() || email.isEmpty() || senha.isEmpty() || confirmarSenha.isEmpty()){
                     Snackbar snackbar = Snackbar.make(view, mensagens[0], Snackbar.LENGTH_SHORT);
                     snackbar.setBackgroundTint(Color.RED);
-                    snackbar.setTextColor(Color.BLACK);
+                    snackbar.setTextColor(Color.WHITE);
                     snackbar.show();
             }
                 else if(!senha.equals(confirmarSenha)){
                     Snackbar snackbar = Snackbar.make(view, mensagens[2], Snackbar.LENGTH_SHORT);
                     snackbar.setBackgroundTint(Color.RED);
-                    snackbar.setTextColor(Color.BLACK);
+                    snackbar.setTextColor(Color.WHITE);
                     snackbar.show();
                     txtSenha.setText("");
                     txtConfirmarSenha.setText("");
@@ -103,7 +103,7 @@ public class CadastroActivity extends AppCompatActivity {
                     System.out.println("ENTROU - -------------------");
                     Snackbar snackbar = Snackbar.make(v, mensagens[1], Snackbar.LENGTH_SHORT);
                     snackbar.setBackgroundTint(Color.GREEN);
-                    snackbar.setTextColor(Color.BLACK);
+                    snackbar.setTextColor(Color.WHITE);
                     snackbar.show();
 
                     txtNome.setText("");
@@ -141,7 +141,7 @@ public class CadastroActivity extends AppCompatActivity {
                     }
                     Snackbar snackbar = Snackbar.make(v, erro, Snackbar.LENGTH_SHORT);
                     snackbar.setBackgroundTint(Color.RED);
-                    snackbar.setTextColor(Color.BLACK);
+                    snackbar.setTextColor(Color.WHITE);
                     snackbar.show();
                 }
             }

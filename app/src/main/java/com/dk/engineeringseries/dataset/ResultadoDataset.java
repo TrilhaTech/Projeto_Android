@@ -18,7 +18,7 @@ public class ResultadoDataset {
                 R.mipmap.devdojo, "Dev Dojo", "Essa trilha irá te ajudar no inicio da sua carreira como dev",
                 R.mipmap.loiane, "Loiane Groner", "Essa trilha irá te ajudar com as principais estruturas básicas",
                 R.mipmap.guarana, "Gustavo Guanabara", "Essa trilha irá te ajudar a se tornar Full-stack",
-                R.mipmap.guarana));
+                R.mipmap.teste));
         return lista;
     }
     public static List<Resultado> getlista2(){
@@ -30,7 +30,7 @@ public class ResultadoDataset {
                 R.mipmap.glako, "Glauko Carvalho", "Essa trilha irá te ajudar com fundamentos sobre redes",
                 R.mipmap.hardware, "Hardware Redes Brasil", "Essa trilha irá te ajudar com seu inicio na prática em redes",
                 R.mipmap.guanabara2, "Gustavo Guanabara", "Essa trilha irá te ajudar com redes de computadores",
-                R.mipmap.guanabara2));        return lista;
+                R.mipmap.teste));        return lista;
     }
     public static List<Resultado> getlista3(){
         lista = new ArrayList<>(5);
@@ -41,7 +41,7 @@ public class ResultadoDataset {
                 R.mipmap.moxie, "Moxie - Especialistas em Jira", "Essa trilha irá te ajudar no inicio da sua carreira com gestão",
                 R.mipmap.alura, "Alura", "Essa trilha irá te ajudar com metodologias de gestões",
                 R.mipmap.andriele, "Andriele Ribeiro", "Essa trilha irá te ajudar com sua carreira em gestão",
-                R.mipmap.andriele));        return lista;
+                R.mipmap.teste));        return lista;
     }
     public static List<Resultado> getlista4(){
         lista = new ArrayList<>(5);
@@ -52,7 +52,7 @@ public class ResultadoDataset {
                 R.mipmap.qalizando, "QAlizando", "Essa trilha irá te ajudar no inicio da sua carreira como Tester",
                 R.mipmap.dio, "DIO", "Essa trilha irá te ajudar a se desenvolver como Q.A",
                 R.mipmap.fontetv, "Código Fonte TV", "Essa trilha irá te ajudar como se tornar um otimo analista",
-                R.mipmap.fontetv));        return lista;
+                R.mipmap.teste));        return lista;
     }
     public static List<Resultado> getlista5(){
         lista = new ArrayList<>(5);
@@ -63,6 +63,6 @@ public class ResultadoDataset {
                 R.mipmap.stack, "Stack", "Essa trilha irá te ajudar no inicio em Data Science",
                 R.mipmap.analitica, "Carreira Analitica", "Essa trilha irá te ajudar com programação em dados",
                 R.mipmap.dinamica, "Programação Dinâmica", "Essa trilha irá te ajudar com seus primeiros passos em dados",
-                R.mipmap.dinamica));        return lista;
+                R.mipmap.teste));        return lista;
     }
 }
