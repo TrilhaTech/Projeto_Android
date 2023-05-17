@@ -1,6 +1,7 @@
 package com.dk.engineeringseries;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.helper.widget.Carousel;
 
@@ -9,6 +10,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
@@ -23,11 +25,19 @@ import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 public class MainActivity extends AppCompatActivity {
     private EditText txtEmail, txtSenha;
     private  View btnEntrar;
     ActivityMainBinding binding;
+
     String[] mensagens = {"Preencha todos os campos!" , "Login realizado com sucesso!"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +46,24 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         //setContentView(R.layout.teste);
         //setupCarousel();
+
+
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        db.collection("Questoes")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                Log.d("dado", document.getId() + " => " + document.getData());
+                            }
+                        } else {
+                            Log.w("erro", "Error getting documents.", task.getException());
+                        }
+                    }
+                });
 
         getSupportActionBar().hide();
         IniciarComponentes();
