@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
                         throw task.getException();
 
                     }catch (Exception e){
-                        erro = "Usuário não cadastrado!";
+                        erro = "Esse usuário não existe!";
                         txtSenha.setText("");
                     }
                     Snackbar snackbar = Snackbar.make(v, erro, Snackbar.LENGTH_SHORT);

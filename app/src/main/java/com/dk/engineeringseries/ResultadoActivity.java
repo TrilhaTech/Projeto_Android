@@ -34,8 +34,10 @@ public class ResultadoActivity extends AppCompatActivity {
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     String usuarioName = null;
+    String usuarioUser = null;
 
     Map<String, Object> usuarios = new HashMap<>();
+    Map<String, Object> usuarios2 = new HashMap<>();
 
 
     @Override
@@ -63,29 +65,29 @@ public class ResultadoActivity extends AppCompatActivity {
     }
 
     private void CadastrarArea() {
-//        usuarioId = FirebaseAuth.getInstance().getCurrentUser().getUid();
-//
-//        DocumentReference documentReference2 = db.collection("Usuarios").document(usuarioId);
-//        documentReference2.addSnapshotListener(new EventListener<DocumentSnapshot>() {
-//            @Override
-//            public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException error) {
-//                if(documentSnapshot != null){
-//                    System.out.println("---------------------"+documentSnapshot.getString("usuario"));
-//                    usuarioName = documentSnapshot.getString("usuario");
-//                    System.out.println("---------------------"+usuarioName);
-//                    usuarios.put("Usuário", usuarioName);
-//                }
-//            }
-//        });
+        usuarioId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+        DocumentReference documentReference2 = db.collection("Usuarios").document(usuarioId);
+        documentReference2.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException error) {
+                if(documentSnapshot != null){
+                    System.out.println("---------------------"+documentSnapshot.getString("usuario"));
+                    usuarioUser = documentSnapshot.getString("usuario");
+                    usuarioName = documentSnapshot.getString("nome");
+
+                    System.out.println("---------------------"+usuarioName);
+                    usuarios.put("Usuário", usuarioUser);
+                    usuarios.put("Nome", usuarioName);
+
+                }
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         String uid = null;
-        //String nome = null;
-        String email = null;
+        //String email = null;
         if (user != null) {
             uid = user.getUid();
-            //nome = user.getDisplayName();
-            email = user.getEmail();
+            //email = user.getEmail();
         }
 
         String result = "";
@@ -97,19 +99,17 @@ public class ResultadoActivity extends AppCompatActivity {
         } else if (getIntent().hasExtra("geren")) {
             result = "Gerenciador de projetos";
         } else if (getIntent().hasExtra("testes")) {
-            result = "Testes/QA";
+            result = "Tester/QA";
         } else if (getIntent().hasExtra("dados")) {
             result = "Analista de dados";
         }
 
         System.out.println("--------------------" + uid);
-        //System.out.println("--------------------" + nome);
-        System.out.println("--------------------" + email);
+        //System.out.println("--------------------" + email);
         System.out.println("--------------------" + result);
 
         usuarios.put("UID", uid);
-        //usuarios.put("Nome", nome);
-        usuarios.put("E-mail", email);
+        //usuarios.put("E-mail", email);
         usuarios.put("resultado", result);
 
         for (String keys : usuarios.keySet())
@@ -134,6 +134,8 @@ public class ResultadoActivity extends AppCompatActivity {
                         Log.d("db", "Erro ao salvar os dados!" + e.toString());
                     }
                 });
+            }
+        });
     }
 
     private void listaDev() {
