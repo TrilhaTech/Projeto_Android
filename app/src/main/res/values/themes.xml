@@ -24,4 +24,7 @@
 
     </style>
 
+    <style name="borda1" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@drawable/borda1</item>
+    </style>
 </resources>

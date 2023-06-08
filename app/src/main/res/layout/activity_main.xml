@@ -36,13 +36,13 @@
 
         <EditText
             android:id="@+id/txtemailL"
+            style="@style/borda1"
             android:layout_width="260dp"
             android:layout_height="47dp"
             android:layout_marginStart="35dp"
             android:layout_marginTop="30dp"
             android:layout_marginEnd="35dp"
             android:layout_marginBottom="30dp"
-            android:background="@drawable/borda1"
             android:ems="10"
             android:gravity="center"
             android:hint="E-mail"
@@ -55,12 +55,12 @@
 
         <EditText
             android:id="@+id/txtSenhaL"
+            style="@style/borda1"
             android:layout_width="260dp"
             android:layout_height="47dp"
             android:layout_marginStart="35dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="35dp"
-            android:background="@drawable/borda1"
             android:ems="10"
             android:gravity="center"
             android:hint="Senha"

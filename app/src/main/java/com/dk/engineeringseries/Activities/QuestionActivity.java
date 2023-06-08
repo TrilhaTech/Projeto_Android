@@ -31,35 +31,55 @@ public class QuestionActivity extends AppCompatActivity {
 
     public int contDev = 1, contRedes = 1, contGeren = 1, contTestes = 1, contDados = 1;
 
-    private String[] dev = new String[]{"A - Desenvolvimento",
-            "B - Desenvolvimento",
-            "C - Desenvolvimento",
-            "D - Desenvolvimento",
-            "E - Desenvolvimento"};
+    private String[] dev = new String[]{"C - Resolução/solução de problemas",
+            "A - Tento acessar o sistema e solucionar o problema rapidamente",
+            "B - Corajoso",
+            "B - Jogar vídeo games",
+            "D - intelij",
+            "A - Lógica e Raciocínio",
+            "D - Proponho a melhor solução",
+            "C - Priorizo a entrega",
+            "E - Prefere atividades práticas"};
 
-    private String[] redes = new String[]{"A - REDES",
-            "B - REDES",
-            "C - REDES",
-            "D - REDES",
-            "E - REDES"};
+    private String[] redes = new String[]{"D - Prefere atividades teóricas",
+            "A - Internet/informação",
+            "C - Pesquiso em vídeos/tutoriais alguma solução",
+            "A - Estudioso",
+            "C - Ficar nas redes sociais",
+            "B - Cisco",
+            "D - Comunicação",
+            "E - Pesquiso recursos para a solução",
+            "D - Busco ser eficiente "};
 
-    private String[] geren = new String[]{"A - GERENCIAMENTO DE PROJETOS",
-            "B - GERENCIAMENTO DE PROJETOS",
-            "C - GERENCIAMENTO DE PROJETOS",
-            "D - GERENCIAMENTO DE PROJETOS",
-            "E - GERENCIAMENTO DE PROJETOS"};
+    private String[] geren = new String[]{"B - Liderança/organização",
+            "E - Pergunto pra todos da casa se notaram alguma coisa ou conseguem ajudar",
+            "D - Organizado",
+            "E - Estar com as pessoas que eu gosto",
+            "E - trello",
+            "C - Networking",
+            "C - Me comprometo a ajudar",
+            "E - Programo melhor minha rotina",
+            "C - Tento ajudar as pessoas"};
 
-    private String[] testes = new String[]{"A - Testes",
-            "B - Testes",
-            "C - Testes",
-            "D - Testes",
-            "E - Testes"};
+    private String[] testes = new String[]{"E - Segurança/analise",
+            "D - Ligo pra assistência técnica",
+            "C - Cuidadoso",
+            "D - Organizar meus documentos/tarefas",
+            "C - Cucumber",
+            "E - Qualidade",
+            "B - Busco os postos de melhoras para a resolução",
+            "A - Priorizo a qualidade",
+            "B - Organizo minhas tarefas"};
 
-    private String[] dados = new String[]{"A - Análise de dados",
-            "B - Análise de dados",
-            "C - Análise de dados",
-            "D - Análise de dados",
-            "E - Análise de dados"};
+    private String[] dados = new String[]{"D - Dados/gráficos",
+            "B - Tento descobrir o motivo e reporto",
+            "E - Analítico",
+            "A - Navego pela internet descobrindo novos aplicativos/sites",
+            "A - Power BI",
+            "B - Prevenção de riscos",
+            "A - Analiso os pós e contras",
+            "B - Não entro em pânico",
+            "A - É um bom ouvinte"};
     private int count = 0;
     private int position = 0;
     private int score = 0;
@@ -136,45 +156,77 @@ public class QuestionActivity extends AppCompatActivity {
 
     private void questoes() {
 
-        list.add(new QuestionModel("1.Questão 1",
-                "A - REDES",
-                "B - Desenvolvimento",
-                "C - Análise de dados",
-                "D - Testes",
-                "E - GERENCIAMENTO DE PROJETOS",
+        list.add(new QuestionModel("1) Eu gosto de trabalhar com:",
+                "A - Internet/informação",
+                "B - Liderança/organização",
+                "C - Resolução/solução de problemas",
+                "D - Dados/gráficos",
+                "E - Segurança/analise",
                 ""));
 
-//        list.add(new QuestionModel("2.Questão 2",
-//                "A - GERENCIAMENTO DE PROJETOS",
-//                "B - Testes",
-//                "C - Análise de dados",
-//                "D - REDES",
-//                "E - Desenvolvimento",
-//                ""));
-//
-//        list.add(new QuestionModel("3.Questão 3",
-//                "A - REDES",
-//                "B - Desenvolvimento",
-//                "C - Testes",
-//                "D - GERENCIAMENTO DE PROJETOS",
-//                "E - Análise de dados",
-//                ""));
-//
-//        list.add(new QuestionModel("4.Questão 4",
-//                "A - Análise de dados",
-//                "B - Desenvolvimento",
-//                "C - Testes",
-//                "D - GERENCIAMENTO DE PROJETOS",
-//                "E - REDES",
-//                ""));
-//
-//        list.add(new QuestionModel("5.Questão 5",
-//                "A - Testes",
-//                "B - GERENCIAMENTO DE PROJETOS",
-//                "C - REDES",
-//                "D - Desenvolvimento",
-//                "E - Análise de dados",
-//                ""));
+        list.add(new QuestionModel("2) Quando minha internet cai, eu:",
+                "A - Tento acessar o sistema e solucionar o problema rapidamente",
+                "B - Tento descobrir o motivo e reporto",
+                "C - Pesquiso em vídeos/tutoriais alguma solução",
+                "D - Ligo pra assistência técnica",
+                "E - Pergunto pra todos da casa se notaram alguma coisa ou conseguem ajudar",
+                ""));
+
+        list.add(new QuestionModel("3) As pessoas te definem como:",
+                "A - Estudioso",
+                "B - Corajoso",
+                "C - Cuidadoso",
+                "D - Organizado",
+                "E - Analítico",
+                ""));
+
+        list.add(new QuestionModel("4) No meu tempo livre eu gosto de:",
+                "A - Navego pela internet descobrindo novos aplicativos/sites",
+                "B - Jogar vídeo games",
+                "C - Ficar nas redes sociais",
+                "D - Organizar meus documentos/tarefas",
+                "E - Estar com as pessoas que eu gosto",
+                ""));
+
+        list.add(new QuestionModel("5) Qual a ferramenta que você tem maior facilidade de utilizar?",
+                "A - Power BI",
+                "B - Cisco",
+                "C - Cucumber",
+                "D - intelij",
+                "E - trello",
+                ""));
+
+        list.add(new QuestionModel("6) O que você mais considera importante no mercado de trabalho?",
+                "A - Lógica e Raciocínio",
+                "B - Prevenção de riscos",
+                "C - Networking",
+                "D - Comunicação",
+                "E - Qualidade",
+                ""));
+
+        list.add(new QuestionModel("7) Quando te pedem ajuda eu:",
+                "A - Analiso os pós e contras",
+                "B - Busco os postos de melhoras para a resolução",
+                "C - Me comprometo a ajudar",
+                "D - Proponho a melhor solução",
+                "E - Pesquiso recursos para a solução",
+                ""));
+
+        list.add(new QuestionModel("8) Como você age sobre pressão:",
+                "A - Priorizo a qualidade",
+                "B - Não entro em pânico",
+                "C - Priorizo a entrega",
+                "D - Busco ser eficiente",
+                "E - Programo melhor minha rotina",
+                ""));
+
+        list.add(new QuestionModel("9) Na sala de aula, você:",
+                "A - É um bom ouvinte",
+                "B - Organizo minhas tarefas",
+                "C - Tento ajudar as pessoas",
+                "D - Prefere atividades teóricas",
+                "E - Prefere atividades práticas",
+                ""));
     }
 
     private void playAnimation(View view, int value, final String data) {

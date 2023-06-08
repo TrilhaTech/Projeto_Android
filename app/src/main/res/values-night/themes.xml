@@ -13,4 +13,8 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="borda1" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@drawable/borda1dark</item>
+    </style>
 </resources>
