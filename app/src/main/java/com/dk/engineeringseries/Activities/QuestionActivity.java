@@ -49,7 +49,7 @@ public class QuestionActivity extends AppCompatActivity {
             "B - Cisco",
             "D - Comunicação",
             "E - Pesquiso recursos para a solução",
-            "D - Busco ser eficiente "};
+            "D - Busco ser mais eficiente "};
 
     private String[] geren = new String[]{"B - Liderança/organização",
             "E - Pergunto pra todos da casa se notaram alguma coisa ou conseguem ajudar",
@@ -58,8 +58,8 @@ public class QuestionActivity extends AppCompatActivity {
             "E - trello",
             "C - Networking",
             "C - Me comprometo a ajudar",
-            "E - Programo melhor minha rotina",
-            "C - Tento ajudar as pessoas"};
+            "E - Organizo as atividades por prioridades",
+            "C - Tenta ajudar as pessoas"};
 
     private String[] testes = new String[]{"E - Segurança/analise",
             "D - Ligo pra assistência técnica",
@@ -67,9 +67,9 @@ public class QuestionActivity extends AppCompatActivity {
             "D - Organizar meus documentos/tarefas",
             "C - Cucumber",
             "E - Qualidade",
-            "B - Busco os postos de melhoras para a resolução",
+            "B - Busco entender como posso ajudar",
             "A - Priorizo a qualidade",
-            "B - Organizo minhas tarefas"};
+            "B - Organiza suas tarefas"};
 
     private String[] dados = new String[]{"D - Dados/gráficos",
             "B - Tento descobrir o motivo e reporto",
@@ -77,7 +77,7 @@ public class QuestionActivity extends AppCompatActivity {
             "A - Navego pela internet descobrindo novos aplicativos/sites",
             "A - Power BI",
             "B - Prevenção de riscos",
-            "A - Analiso os pós e contras",
+            "A - Analiso se tenho condições de ajudar",
             "B - Não entro em pânico",
             "A - É um bom ouvinte"};
     private int count = 0;
@@ -188,7 +188,7 @@ public class QuestionActivity extends AppCompatActivity {
                 "E - Estar com as pessoas que eu gosto",
                 ""));
 
-        list.add(new QuestionModel("5) Qual a ferramenta que você tem maior facilidade de utilizar?",
+        list.add(new QuestionModel("5) Qual ferramenta você gosta de utilizar?",
                 "A - Power BI",
                 "B - Cisco",
                 "C - Cucumber",
@@ -196,7 +196,7 @@ public class QuestionActivity extends AppCompatActivity {
                 "E - trello",
                 ""));
 
-        list.add(new QuestionModel("6) O que você mais considera importante no mercado de trabalho?",
+        list.add(new QuestionModel("6) O que é importante no mercado de trabalho?",
                 "A - Lógica e Raciocínio",
                 "B - Prevenção de riscos",
                 "C - Networking",
@@ -205,25 +205,25 @@ public class QuestionActivity extends AppCompatActivity {
                 ""));
 
         list.add(new QuestionModel("7) Quando te pedem ajuda eu:",
-                "A - Analiso os pós e contras",
-                "B - Busco os postos de melhoras para a resolução",
+                "A - Analiso se tenho condições de ajudar",
+                "B - Busco entender como posso ajudar",
                 "C - Me comprometo a ajudar",
                 "D - Proponho a melhor solução",
                 "E - Pesquiso recursos para a solução",
                 ""));
 
-        list.add(new QuestionModel("8) Como você age sobre pressão:",
+        list.add(new QuestionModel("8) Como você age sobre pressão no trabalho/escola:",
                 "A - Priorizo a qualidade",
                 "B - Não entro em pânico",
                 "C - Priorizo a entrega",
-                "D - Busco ser eficiente",
-                "E - Programo melhor minha rotina",
+                "D - Busco ser mais eficiente",
+                "E - Organizo as atividades por prioridades",
                 ""));
 
         list.add(new QuestionModel("9) Na sala de aula, você:",
                 "A - É um bom ouvinte",
-                "B - Organizo minhas tarefas",
-                "C - Tento ajudar as pessoas",
+                "B - Organiza suas tarefas",
+                "C - Tenta ajudar as pessoas",
                 "D - Prefere atividades teóricas",
                 "E - Prefere atividades práticas",
                 ""));

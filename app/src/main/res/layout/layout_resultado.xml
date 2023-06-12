@@ -476,7 +476,7 @@
             android:layout_width="match_parent"
             android:layout_height="225dp"
             android:layout_marginTop="30dp"
-            android:background="#000000">
+            android:background="#FFFFFF">
 
             <TextView
                 android:id="@+id/txtContato"
@@ -485,7 +485,7 @@
                 android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:text="trilhatechbrasil@gmail.com"
-                android:textColor="#FFFFFF"
+                android:textColor="#000000"
                 android:textSize="18dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
